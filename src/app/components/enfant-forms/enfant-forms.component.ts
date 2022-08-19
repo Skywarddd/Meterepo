@@ -8,11 +8,16 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./enfant-forms.component.css']
 })
 export class EnfantFormsComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   @Output()
   addCity: EventEmitter<any> = new EventEmitter();
 
-  city : FormGroup  = this.formBuilder.group({
+
+  city: FormGroup = this.formBuilder.group({
+
     name: ['',Validators.required]    
   })
 
@@ -20,8 +25,7 @@ export class EnfantFormsComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
-  }
+  
 
   public onSubmit(): void {
     this.submitted = true;
@@ -48,3 +52,4 @@ export class EnfantFormsComponent implements OnInit {
   }
 
 }
+
