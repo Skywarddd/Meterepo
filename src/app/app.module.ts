@@ -8,16 +8,18 @@ import { MeteoHomeComponent } from './components/meteo-home/meteo-home.component
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DisplayMeteoComponent } from './components/display-meteo/display-meteo.component';
 import { CommonComponent } from './components/common/common.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    MeteoHomeComponent
+    MeteoHomeComponent,
     NavbarComponent,
     DisplayMeteoComponent,
-    CommonComponent
+    CommonComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
