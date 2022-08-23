@@ -12,6 +12,6 @@ export class MeteoService {
   constructor(private httpClient: HttpClient) { }
 
   getMeteo(): Observable<Meteo[]> {
-    return this.httpClient.get<Meteo[]>(`${this.apiUrl}/1`); // template à changer
+    return this.httpClient.get<Meteo[]>(`${this.apiUrl}`); // template à changer
   }
 }
