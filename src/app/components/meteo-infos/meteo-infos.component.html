@@ -1,3 +1,3 @@
-<ul *ngFor="let meteoInfo of meteoInfos">
-    <li>{{meteoInfo.id}} {{meteoInfo.title}}</li>
+<ul>
+    <li>{{meteoInfo.city.name}} {{meteoInfo.forecast[0].tmin}}°C</li>
 </ul>

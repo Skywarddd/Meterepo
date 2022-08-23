@@ -8,10 +8,16 @@ import { Meteo } from '../models/meteo.model';
 })
 export class MeteoService {
 
-  private apiUrl = "https://jsonplaceholder.typicode.com/todos" //template à changer
+  //URL de base sans le code INSEE
+  private apiUrl = "https://api.meteo-concept.com/api/forecast/daily?token=a4932fe1f52e2cbaba3d8004e8f205628ec6e87df32df9b95d37058495220502" 
   constructor(private httpClient: HttpClient) { }
 
-  getMeteo(): Observable<Meteo[]> {
-    return this.httpClient.get<Meteo[]>(`${this.apiUrl}`); // template à changer
+  //code correspond au code insee à rentrer
+  getMeteos(code: string): Observable<Meteo[]> {
+    return this.httpClient.get<Meteo[]>(`${this.apiUrl}`); 
+  }
+
+  getMeteobyInsee(code: string): Observable<Meteo> {
+    return this.httpClient.get<Meteo>(`${this.apiUrl}&insee=` + code); 
   }
 }
