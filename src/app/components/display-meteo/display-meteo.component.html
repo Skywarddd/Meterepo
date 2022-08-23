@@ -1,1 +1,44 @@
-<p>display-meteo works!</p>
+<div>
+    
+<div id="heure">
+
+    </div>
+    <app-form-city-dropdown (formEmit)="modifDisplay($event)"></app-form-city-dropdown>
+    <div *ngFor="let meteo of meteos">
+
+        <br>
+        <div id="meteo" *ngIf="displayArnac  && meteo.name.includes('Arnac')" >    
+            <h4> Actuellement à {{meteo.name}} </h4> 
+            <br>
+            <p>Il fait : {{meteo.temperature}}°C</p>
+            <p>L'ensoleillement est de : {{meteo.ensoleillement}} % </p> 
+            <p>La pluviometrie est de : {{meteo.pluviometrie}} mm </p>
+        </div>
+        
+        <div id="meteo" *ngIf="displayVesoul && meteo.name.includes('Vesoul')" >    
+            <h4> Actuellement à {{meteo.name}} </h4> 
+            <br>
+            <p>Il fait : {{meteo.temperature}}°C</p>
+            <p>L'ensoleillement est de : {{meteo.ensoleillement}} % </p> 
+            <p>La pluviometrie est de : {{meteo.pluviometrie}} mm </p>
+        </div>
+        
+        <div id="meteo" *ngIf="displayBellecombe && meteo.name.includes('Bellecombe')" >    
+            <h4> Actuellement à {{meteo.name}} </h4> 
+            <br>
+            <p>Il fait : {{meteo.temperature}}°C</p>
+            <p>L'ensoleillement est de : {{meteo.ensoleillement}} % </p> 
+            <p>La pluviometrie est de : {{meteo.pluviometrie}} mm </p>
+        </div>
+        
+        <div id="meteo" *ngIf="displayCaen && meteo.name.includes('Caen')" >    
+            <h4> Actuellement à {{meteo.name}} </h4> 
+            <br>
+            <p>Il fait : {{meteo.temperature}}°C</p>
+            <p>L'ensoleillement est de : {{meteo.ensoleillement}} % </p> 
+            <p>La pluviometrie est de : {{meteo.pluviometrie}} mm </p>
+        </div>
+    </div>
+    
+    
+</div>

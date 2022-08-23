@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-form-city-dropdown',
@@ -7,7 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class EnfantFormsComponent {
   isSubmitted = false;
-  City: any = ['Vessoul', 'Arnac-la-Poste', 'Bellecombe', 'Caen'];
+  City: any = ['Vesoul', 'Arnac-la-Poste', 'Bellecombe', 'Caen'];
   constructor(public fb: FormBuilder) {}
   registrationForm = this.fb.group({
     cityName: ['', [Validators.required]],
@@ -17,6 +17,8 @@ export class EnfantFormsComponent {
       onlySelf: true,
     });
   }
+
+  @Output() formEmit = new EventEmitter<string>();
 
 
 
@@ -31,7 +33,8 @@ export class EnfantFormsComponent {
     if (!this.registrationForm.valid) {
       false;
     } else {      
+      this.formEmit.emit(JSON.stringify(this.registrationForm.value))
       console.log(JSON.stringify(this.registrationForm.value));
     }
-  }
+  } 
 }
